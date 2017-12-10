@@ -1,0 +1,13 @@
+{
+  "name": "roomescapebot",
+  "version": "0.0.1",
+  "description": "Room Escape Bot",
+  "main": "app.js",
+  "scripts": {
+      "start": "node app.js
+  },
+ dependencies": {
+    "discord.js": "^11.2.1",
+    "roblox-js": "^4.0.2"
+  }
+}
