@@ -278,7 +278,7 @@ var groupId = "3653742"
  	var command = command.toLowerCase();
  	var content = message.content.toLowerCase();
  	return content.startsWith(prefix + command);
-	else {
+  	}else {
 	message.reply("No permissions")
  }}
 
