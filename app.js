@@ -9,9 +9,9 @@ var red = "389210668450054144"
 var pink = "389210666470211586"
 var cyan = "389210651358134287"
 var black = "389210673546133507"
-//roblox.login({username: " ", password: " "}).then((success) => {
+roblox.login({username: process.env.BOT_USERNAME, password: process.env.BOT_PASSWORD}).then((success) => {
 
-//}).catch(() => {console.log("Sorry, it failed.");});
+}).catch(() => {console.log("Sorry, it failed.");});
 client.on('ready',() => {
   console.log('Room Escape Bot Online')
   client.user.setGame('Type -help for help!')
@@ -266,31 +266,33 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
 
 
 
-//var groupId = " "
+var groupId = "3653742"
 
 
-// function isCommand(command, message){
-//   if (message.channel.type === "dm"){
-//     message.channel.send("Please use the Room Escape Discord for commands")
-//     return
-//   };
-//  if(message.member.roles.find("name", "Bot Commander")){
-// 	var command = command.toLowerCase();
-// 	var content = message.content.toLowerCase();
-// 	return content.startsWith(prefix + command);
-// }}
-//
-// client.on('message', (message) => {
-// 	if (message.author.bot) return;
-//       var args = message.content.split(' ');
-//       var argsresult = args.join(' ');
-//
-//     if(isCommand('shout', message)){
-//     	var shout = args[1]
-//     	if (shout){
-//     	roblox.shout(groupId,argsresult.slice(6))
-//         message.reply("shouted the message:" + argsresult.slice(6))
-//     }}
-//
-// });
+ function isCommand(command, message){
+   if (message.channel.type === "dm"){
+     message.channel.send("Please use the Room Escape Discord for commands")
+     return
+   };
+  if(message.member.roles.find("name", "Bot Commander")){
+ 	var command = command.toLowerCase();
+ 	var content = message.content.toLowerCase();
+ 	return content.startsWith(prefix + command);
+	else {
+	message.reply("No permissions")
+ }}
+
+ client.on('message', (message) => {
+ 	if (message.author.bot) return;
+       var args = message.content.split(' ');
+       var argsresult = args.join(' ');
+
+     if(isCommand('shout', message)){
+     	var shout = args[1]
+     	if (shout){
+     	roblox.shout(groupId,argsresult.slice(6))
+         message.reply("shouted the message:" + argsresult.slice(6))
+     }}
+
+ });
 client.login(process.env.BOT_TOKEN)
