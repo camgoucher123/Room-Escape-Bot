@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var roblox = require('roblox-js');
 var general = "386643068608315392"
+var announcements = "386644309493153803"
 var roomescapebotlog = "389211679038373889"
 var blue = "389210671855828994"
 var yellow = "389210670455062529"
@@ -180,7 +181,7 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
     if(message.member.roles.find("name", "Bot Commander")){
       if (args.length <=1) return
       message.delete()
-    message.guild.channels.get(general).send(argsresult.slice(4))
+    message.guild.channels.get(announcements).send(argsresult.slice(4))
   }
 } else
   // if(message.content.startsWith(prefix+'spam')){
