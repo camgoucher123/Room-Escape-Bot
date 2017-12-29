@@ -273,7 +273,7 @@ var groupId = "3653742"
    if (message.channel.type === "dm"){
      message.channel.send("Please use the Room Escape Discord for commands")
      return
-   };
+   }};
 
 
  client.on('message', (message) => {
