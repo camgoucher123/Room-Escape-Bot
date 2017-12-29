@@ -280,7 +280,7 @@ var groupId = "3653742"
  	if (message.author.bot) return;
        var args = message.content.split(' ');
        var argsresult = args.join(' ');
-
+ });
      if(isCommand('shout', message)){
 	 if(message.member.roles.find("name", "Bot Commander")){
  	var command = command.toLowerCase();
@@ -294,7 +294,7 @@ var groupId = "3653742"
      	if (shout){
      	roblox.shout(groupId,argsresult.slice(6))
          message.reply("shouted the message:" + argsresult.slice(6))
-	}}}
+	}}
 
  });
 client.login(process.env.BOT_TOKEN)
