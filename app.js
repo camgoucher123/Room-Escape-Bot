@@ -150,7 +150,7 @@ client.on('message', message => {
 
       message.author.send({embed: {
         color: 3447003,
-        title: "Moderarion Commands",
+        title: "Moderation Commands",
         description: "All commands must begin with the prefix (-)",
         fields: [{
        name: "Shout",
