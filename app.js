@@ -183,10 +183,10 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
     message.guild.channels.get(general).send(argsresult.slice(4))
   }
 } else
-   if(message.content.startsWith(prefix+'spam')){
-     message.reply("spamming bat")
-     message.guild.members.get("240222986605428746").send("spam")
- } else
+  // if(message.content.startsWith(prefix+'spam')){
+   //  message.reply("spamming bat")
+    // message.guild.members.get("240222986605428746").send("spam")
+ //} else
   if(message.content.startsWith(prefix+'color')){
     let color = args[1];
     if(!color) return message.reply("You must provide a color to choose from! Say \"-listcolors\" To view the colors")
