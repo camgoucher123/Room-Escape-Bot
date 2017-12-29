@@ -274,15 +274,7 @@ var groupId = "3653742"
      message.channel.send("Please use the Room Escape Discord for commands")
      return
    };
-function hasRank()
-  if(message.member.roles.find("name", "Bot Commander")){
- 	var command = command.toLowerCase();
- 	var content = message.content.toLowerCase();
- 	return content.startsWith(prefix + command);
-  	}else {
-	message.reply("No permissions")
- }}
-};
+
 
  client.on('message', (message) => {
  	if (message.author.bot) return;
@@ -290,7 +282,13 @@ function hasRank()
        var argsresult = args.join(' ');
 
      if(isCommand('shout', message)){
-	     if(hasrank){
+	 if(message.member.roles.find("name", "Bot Commander")){
+ 	var command = command.toLowerCase();
+ 	var content = message.content.toLowerCase();
+ 	return content.startsWith(prefix + command);
+  	}else {
+	message.reply("No permissions")
+ }}
      	var shout = args[1]
      	if (shout){
      	roblox.shout(groupId,argsresult.slice(6))
