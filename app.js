@@ -147,7 +147,7 @@ client.on('message', message => {
 
      }]
       }})
-
+	  if(message.member.roles.find("name", "Bot Commander")){
       message.author.send({embed: {
         color: 3447003,
         title: "Moderation Commands",
@@ -163,7 +163,7 @@ client.on('message', message => {
 ]
       }
 
-    })
+    })}
     } else
     if(message.content.startsWith(prefix+'ping')) {
 message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`) );
