@@ -280,7 +280,7 @@ var groupId = "3653742"
  	if (message.author.bot) return;
        var args = message.content.split(' ');
        var argsresult = args.join(' ');
- });
+
      if(isCommand('shout', message)){
 	 if(message.member.roles.find("name", "Bot Commander")){
  	var command = command.toLowerCase();
