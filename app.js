@@ -288,12 +288,13 @@ var groupId = "3653742"
  	return content.startsWith(prefix + command);
   	}else {
 	message.reply("No permissions")
- 
+	return
+	}
      	var shout = args[1]
      	if (shout){
      	roblox.shout(groupId,argsresult.slice(6))
          message.reply("shouted the message:" + argsresult.slice(6))
-	}}}}
+	}}}
 
  });
 client.login(process.env.BOT_TOKEN)
