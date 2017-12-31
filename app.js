@@ -281,7 +281,7 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
           } else
 	if(message.content.startsWith(prefix+'roll')){
 		 if(message.member.roles.find("name", "Bot Commander")){
-		if(typeof(argsresult) === number {
+		if(typeof(args[1], args[2]) === number{
 		   var x = getRandomInt1(args[1],args[2]);
 			 message.reply(argsresult)
 		 }
