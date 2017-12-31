@@ -49,10 +49,19 @@ client.on('messageDelete', function(m){
 	  }
 	});
 })
-const swearWords = ["lol"];
+const swearWords = ["fuck", "bitch","dick","nigger","faggot","gay","nigga","pussy","penis","ass"];
 client.on('message',message =>{
 if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete()
+message.reply("One or more of your messages has been caught and filtered out, please do not attempt to bypass this or swear!").then(message => message.delete(5000))
+
+}
+})
+
+client.on('messageUpdate', function(oldm,newm){
+	if(oldm.content === newm.content) return;
+	if( swearWords.some(word => newm.content.toLowerCase().includes(word)) ) {
+ newm.delete()
 message.reply("One or more of your messages has been caught and filtered out, please do not attempt to bypass this or swear!").then(message => message.delete(5000))
 
 }
