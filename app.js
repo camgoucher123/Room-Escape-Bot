@@ -10,7 +10,17 @@ var red = "389210668450054144"
 var pink = "389210666470211586"
 var cyan = "389210651358134287"
 var black = "389210673546133507"
-function getRandomInt(min, max) {
+function getRandomInt1(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+function getRandomInt2(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+function getRandomInt3(min,max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
@@ -54,7 +64,7 @@ client.on('messageDelete', function(m){
 	  }
 	});
 })
-const swearWords = ["nigga","nigger","niglet","nig","penis","rape","queer","dike","kike","slut","whore","shit","fuck","damn","bitch","dick","pussy","fag","cock","asshole","faggot","fag","bastard","cunt","douche","fucker"];
+const swearWords = ["nigga","nigger","niglet","nig","penis","rape","queer","retard","dike","kike","slut","whore","shit","fuck","damn","bitch","dick","pussy","fag","cock","asshole","faggot","fag","bastard","cunt","douche","fucker"];
 client.on('message',message =>{
 if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete()
@@ -279,9 +289,13 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
           		message.reply("The colors are: ```pink, cyan, red, blue, yellow, black, none``` more colors coming soon!")
           } else
 	if(message.content.startsWith(prefix+'roll')){
-		   var x = getRandomInt(0, 100);
-		message.reply(x)
-		}
+		 if(message.member.roles.find("name", "Bot Commander")){
+		   var x = getRandomInt1(0, 100);
+		   var x2 = getRandomInt2(100, 500);
+		   var x3 = getRandomInt3(500,1000)
+		   var result = x+"-"+x2+"-"+x3
+		message.reply(result)
+		}}
 	
 
 });
