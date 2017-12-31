@@ -54,7 +54,7 @@ client.on('message',message =>{
 if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete()
 message.reply("One or more of your messages has been caught and filtered out, please do not attempt to bypass this or swear!")
-message.delete(5000)
+	.then(message.delete(5000))
 
 }
 })
