@@ -278,7 +278,7 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
             if(message.content.startsWith(prefix + 'listcolors')){
           		message.reply("The colors are: ```pink, cyan, red, blue, yellow, black, none``` more colors coming soon!")
           } else
-	if(message.content.startswith(prefix+'roll')){
+	if(message.content.startsWith(prefix+'roll')){
 		   var x = getRandomInt(0, 100);
 		message.reply(x)
 		}
