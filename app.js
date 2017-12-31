@@ -49,7 +49,7 @@ client.on('messageDelete', function(m){
 	  }
 	});
 })
-const swearWords = ["nigga","nigger","niglet","nig","penis","ass","queer","dike","kike",'slut","whore","shit","fuck","damn","bitch","crap","dick","pussy","fag","cock","asshole","faggot","fag","bastard","cunt","douche","fucker"];
+const swearWords = ["nigga","nigger","niglet","nig","penis","ass","queer","dike","kike","slut","whore","shit","fuck","damn","bitch","dick","pussy","fag","cock","asshole","faggot","fag","bastard","cunt","douche","fucker"];
 client.on('message',message =>{
 if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete()
