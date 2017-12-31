@@ -15,16 +15,7 @@ function getRandomInt1(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 }
-function getRandomInt2(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-function getRandomInt3(min,max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+
 //roblox.login({username: process.env.BOT_USERNAME, password: process.env.BOT_PASSWORD}).then((success) => {
 
 //}).catch(() => {console.log("Sorry, it failed.");});
@@ -64,7 +55,7 @@ client.on('messageDelete', function(m){
 	  }
 	});
 })
-const swearWords = ["nigga","nigger","niglet","nig","penis","rape","queer","retard","dike","kike","slut","whore","shit","fuck","damn","bitch","dick","pussy","fag","cock","asshole","faggot","fag","bastard","cunt","douche","fucker"];
+const swearWords = ["nigga","nigger","niglet","nig","fuk","penis","rape","queer","retard","dike","kike","slut","whore","shit","fuck","damn","bitch","dick","pussy","fag","cock","asshole","faggot","fag","bastard","cunt","douche","fucker"];
 client.on('message',message =>{
 if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete()
@@ -290,11 +281,8 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
           } else
 	if(message.content.startsWith(prefix+'roll')){
 		 if(message.member.roles.find("name", "Bot Commander")){
-		   var x = getRandomInt1(0, 100);
-		   var x2 = getRandomInt2(100, 500);
-		   var x3 = getRandomInt3(500,1000)
-		   var result = x+"-"+x2+"-"+x3
-		message.reply(result)
+		   var x = getRandomInt1(args[1],args[1]);
+			 
 		}}
 	
 
