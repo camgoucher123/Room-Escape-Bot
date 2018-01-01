@@ -172,7 +172,7 @@ client.on('message', message => {
 
      }]
       }})
-	  if(message.member.roles.find("name", "Bot Commander")){
+	  if(message.member.roles.find("name", "Chat Admin")){
       message.author.send({embed: {
         color: 3447003,
         title: "Moderation Commands",
