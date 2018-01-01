@@ -55,7 +55,7 @@ client.on('messageDelete', function(m){
 	  }
 	});
 })
-const swearWords = ["nigga","nigger","niglet","nig","fuk","penis","rape","queer","retard","dike","kike","slut","whore","shit","fuck","damn","bitch","dick","pussy","fag","cock","asshole","faggot","fag","bastard","cunt","douche","fucker"];
+const swearWords = ["nigga","nigger","niglet","nig","fuk","penis","rape","queer","sex","retard","dike","kike","slut","whore","shit","fuck","damn","bitch","dick","pussy","fag","cock","asshole","faggot","fag","bastard","cunt","douche","fucker"];
 client.on('message',message =>{
 if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
  message.delete()
@@ -161,6 +161,10 @@ client.on('message', message => {
      {
        name: "listcolors",
        value: "Lists all the colors your can set your name"
+     },
+      {
+       name: "roll",
+       value: "Rolls a number, between 1 and 100"
      },
      {
        name: "color",
