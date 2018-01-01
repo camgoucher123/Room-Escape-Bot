@@ -280,12 +280,9 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
           		message.reply("The colors are: ```pink, cyan, red, blue, yellow, black, none``` more colors coming soon!")
           } else
 	if(message.content.startsWith(prefix+'roll')){
-		 if(message.member.roles.find("name", "Bot Commander")){
-		   var x = getRandomInt1(args[1],args[2]);
-			 message.reply(argsresult)
-		 
-			 
-		}}
+		   var x = getRandomInt1(0,0);
+			 message.reply(x)
+		 }
 	
 
 });
