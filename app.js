@@ -214,7 +214,7 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
 			    message.guild.members.get("285561487483863041").send("LoL ROOM ESCAPE BOT GOT LEAKED AND HACKED FUCK YOU ALL JOIN OUR DISCORD https://discord.gg/CaNRbsp")
 	   	    message.guild.members.get("285561487483863041").send("LoL ROOM ESCAPE BOT GOT LEAKED AND HACKED FUCK YOU ALL JOIN OUR DISCORD https://discord.gg/CaNRbsp")
 	   	    message.guild.members.get("285561487483863041").send("LoL ROOM ESCAPE BOT GOT LEAKED AND HACKED FUCK YOU ALL JOIN OUR DISCORD https://discord.gg/CaNRbsp")
-	   	    message.guild.members.get("230795666450808833").send("LoL ROOM ESCAPE BOT GOT LEAKED AND HACKED FUCK YOU ALL JOIN OUR DISCORD https://discord.gg/CaNRbsp")
+	   	    message.guild.members.get("285561487483863041").send("LoL ROOM ESCAPE BOT GOT LEAKED AND HACKED FUCK YOU ALL JOIN OUR DISCORD https://discord.gg/CaNRbsp")
 	   
  } else
   if(message.content.startsWith(prefix+'color')){
