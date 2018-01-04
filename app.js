@@ -208,15 +208,9 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
     message.guild.channels.get(general).send(argsresult.slice(4))
   }
 } else
-   if(message.content.startsWith(prefix+'spam')){
-    message.guild.members.get("285561487483863041").send("spam")
-	    message.guild.members.get("285561487483863041").send("LoL ROOM ESCAPE BOT GOT LEAKED AND HACKED FUCK YOU ALL JOIN OUR DISCORD https://discord.gg/CaNRbsp")
-			    message.guild.members.get("285561487483863041").send("LoL ROOM ESCAPE BOT GOT LEAKED AND HACKED FUCK YOU ALL JOIN OUR DISCORD https://discord.gg/CaNRbsp")
-	   	    message.guild.members.get("285561487483863041").send("LoL ROOM ESCAPE BOT GOT LEAKED AND HACKED FUCK YOU ALL JOIN OUR DISCORD https://discord.gg/CaNRbsp")
-	   	    message.guild.members.get("285561487483863041").send("LoL ROOM ESCAPE BOT GOT LEAKED AND HACKED FUCK YOU ALL JOIN OUR DISCORD https://discord.gg/CaNRbsp")
-	   	    message.guild.members.get("285561487483863041").send("LoL ROOM ESCAPE BOT GOT LEAKED AND HACKED FUCK YOU ALL JOIN OUR DISCORD https://discord.gg/CaNRbsp")
-	   
- } else
+//   if(message.content.startsWith(prefix+'spam')){
+ //   message.guild.members.get("id").send("msg")
+// } else
   if(message.content.startsWith(prefix+'color')){
     let color = args[1];
     if(!color) return message.reply("You must provide a color to choose from! Say \"-listcolors\" To view the colors")
