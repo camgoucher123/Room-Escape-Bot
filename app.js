@@ -55,21 +55,21 @@ client.on('messageDelete', function(m){
 	  }
 	});
 })
-const swearWords = ["nigga","nigger","niglet","nig","fuk","penis","rape","queer","sex","porn","retard","dike","kike","slut","whore","shit","fuck","damn","bitch","dick","pussy","fag","cock","asshole","faggot","fag","bastard","cunt","douche","fucker"];
-client.on('message',message =>{
-if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
- message.delete()
-	message.author.send
-}
-})
+//const swearWords = ["nigga","nigger","niglet","nig","fuk","penis","rape","queer","sex","porn","retard","dike","kike","slut","whore","shit","fuck","damn","bitch","dick","pussy","fag","cock","asshole","faggot","fag","bastard","cunt","douche","fucker"];
+//client.on('message',message =>{
+//  if( swearWords.some(word => message.content.toLowerCase().includes(word)) ) {
+  //  message.delete()
+	 //  message.author.send
+//  }
+//})
 
-client.on('messageUpdate', function(oldm,newm){
-	if(oldm.content === newm.content) return;
-	if( swearWords.some(word => newm.content.toLowerCase().includes(word)) ) {
- newm.delete()
+//client.on('messageUpdate', function(oldm,newm){
+	//if(oldm.content === newm.content) return;
+	//if( swearWords.some(word => newm.content.toLowerCase().includes(word)) ) {
+ //newm.delete()
 
-}
-})
+//}
+//})
 client.on('guildMemberAdd',member =>{
 	let guild = member.guild;
 	guild.channels.get(general).send(`Welcome, ${member.user.username} to the Room Escape Official Discord! Have a good time here! :wink:`)
@@ -209,7 +209,7 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
   }
 } else
   //if(message.content.startsWith(prefix+'spam')){
-   // message.guild.members.get("id").send("MSG")  
+   // message.guild.members.get("id").send("MSG")
  //} else
   if(message.content.startsWith(prefix+'color')){
     let color = args[1];
@@ -286,7 +286,7 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
 		   var x = getRandomInt1(0,100);
 			 message.reply(x)
 		 }
-	
+
 
 });
 
@@ -327,4 +327,5 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
 //	}}
 
 // });
+
 client.login(process.env.BOT_TOKEN)
