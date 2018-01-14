@@ -204,7 +204,7 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
   if(message.content.startsWith(prefix+'say')){
     if(message.member.roles.find("name", "Bot Commander")){
       if (args.length <=1) return
-      //message.delete()
+      message.delete()
     message.guild.channels.get(general).send(argsresult.slice(4))
   }
 } else
