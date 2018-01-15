@@ -192,7 +192,6 @@ client.on('message', message => {
     } else
     if(message.content.startsWith(prefix +'vortex')){
        var n = getRandomInt(1,6)
-       message.reply(n)
        if(n === 1){
          message.reply("Ray’s friends claim he’s a baseball nut. He says they’re way off base.")
        }
