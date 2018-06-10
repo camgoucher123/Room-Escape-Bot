@@ -127,7 +127,7 @@ client.on('message', message => {
     if (!message.content.startsWith(prefix)) return;
 
     if (message.author.bot) return;
-    if (message.channel.id !== ("386643414973808652")) return
+    //if (message.channel.id !== ("386643414973808652")) return
     if (message.channel.type === "dm"){
       message.channel.send("Please use the Room Escape Discord for commands")
       return
