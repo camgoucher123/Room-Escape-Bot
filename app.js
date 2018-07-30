@@ -16,9 +16,6 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-//roblox.login({username: process.env.BOT_USERNAME, password: process.env.BOT_PASSWORD}).then((success) => {
-
-//}).catch(() => {console.log("Sorry, it failed.");});
 client.on('ready',() => {
   console.log('Room Escape Bot Online')
   client.user.setGame('Type -help for help!')
@@ -127,7 +124,7 @@ client.on('message', message => {
     if (!message.content.startsWith(prefix)) return;
 
     if (message.author.bot) return;
-    //if (message.channel.id !== ("386643414973808652")) return
+    //if (message.channel.id !== ("386643414973808652")) return - bot command
     if (message.channel.type === "dm"){
       message.channel.send("Please use the Room Escape Discord for commands")
       return
@@ -162,11 +159,7 @@ client.on('message', message => {
        name: "listcolors",
        value: "Lists all the colors your can set your name"
      },
-      {
-       name: "roll",
-       value: "Rolls a number, between 1 and 100"
-     },
-     {
+       {
        name: "color",
        value: "Changes the color of your name! -color [color]"
 
@@ -178,38 +171,13 @@ client.on('message', message => {
         title: "Moderation Commands",
         description: "All commands must begin with the prefix (-)",
         fields: [{
-       name: "Shout (IN DEVELOPMENT, DOES NOT WORK)",
+       name: "shout",
        value: "Shout something to the group! -shout [message]"
-     },
-     {
-       name:"???",
-       value: "??? (Coming soon)"
      }
 ]
       }
 
     })}
-    } else
-    if(message.content.startsWith(prefix +'vortex')){
-       var n = getRandomInt(1,6)
-       if(n === 1){
-         message.reply("Ray’s friends claim he’s a baseball nut. He says they’re way off base.")
-       }
-       if(n === 2){
-         message.reply("Someone stole my toilet and the police have nothing to go on.")
-       }
-       if(n === 3){
-         message.reply("Last time I got caught stealing a calendar I got 12 months.")
-       }
-       if(n === 4){
-         message.reply("Did you hear about the guy who got hit in the head with a can of soda? He was lucky it was a soft drink.")
-       }
-       if(n === 5){
-         message.reply("I wasn’t originally going to get a brain transplant, but then I changed my mind.")
-       }
-       if(n === 6){
-         message.reply("I can’t believe I got fired from the calendar factory. All I did was take a day off.")
-       }
     }else
     if(message.content.startsWith(prefix+'ping')) {
 message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`) );
@@ -226,12 +194,11 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
     if(message.member.roles.find("name", "Bot Commander")){
       if (args.length <=1) return
       message.delete()
-    message.guild.channels.get(general).send(argsresult.slice(4))
+    message.guild.channels.get("386641793199898624").send(argsresult.slice(4))
   }
 } else
- // if(message.content.startsWith(prefix+'spam')){
-//	message.guild.members.get("id").send(".")
-	
+  //if(message.content.startsWith(prefix+'spam')){
+   // message.guild.members.get("id").send("MSG")
  //} else
   if(message.content.startsWith(prefix+'color')){
     let color = args[1];
@@ -303,51 +270,50 @@ message.channel.send('Pinging!').then(m => m.edit(`Pong! Latency is ${m.createdT
           }}}}}}}} else
             if(message.content.startsWith(prefix + 'listcolors')){
           		message.reply("The colors are: ```pink, cyan, red, blue, yellow, black, none``` more colors coming soon!")
-          } else
-	if(message.content.startsWith(prefix+'roll')){
-		   var x = getRandomInt(0,100);
-			 message.reply(x)
-		 }
+          }
 
 
 });
-
-
-// roblox related stuff goes under here
-
-
-
-
-//var groupId = "3653742"
-
-
- //function isCommand(command, message){
-   //if (message.channel.type === "dm"){
-   //  message.channel.send("Please use the Room Escape Discord for commands")
-   //  return
-  // }};
-
-
-// client.on('message', (message) => {
-// 	if (message.author.bot) return;
-//       var args = message.content.split(' ');
-//       var argsresult = args.join(' ');
-
-//     if(isCommand('shout', message)){
-//	 if(message.member.roles.find("name", "Bot Commander")){
-// 	var command = command.toLowerCase();
-// 	var content = message.content.toLowerCase();
-// 	return content.startsWith(prefix + command);
-//    	var shout = args[1]
-//     	if (shout){
-//     	roblox.shout(groupId,argsresult.slice(6))
-//         message.reply("shouted the message:" + argsresult.slice(6))
-//		}else {
-//	message.reply("No permissions")
-//	return
-//	}
-//	}}
-
-// });
-
 client.login(process.env.BOT_TOKEN)
+
+
+
+//roblox stuff under here
+var roblox = require('roblox-js');
+
+roblox.login({username: process.env.BOT_USERNAME, password: process.env.BOT_PASSWORD}).then((success) => {
+
+}).catch(() => {console.log("Failed to login.");})
+
+var groupId = "3653742"
+
+
+ function isCommand(command, message){
+   if (message.channel.type === "dm"){
+     message.channel.send("Please use the Room Escape Discord for commands")
+     return
+   }};
+
+
+ client.on('message', (message) => {
+ 	if (message.author.bot) return;
+       var args = message.content.split(' ');
+       var argsresult = args.join(' ');
+
+     if(message.content.startsWith(prefix + 'shout')){
+	 if(message.member.roles.find("name", "Chat Admin")){
+    	var shout = args[1]
+     	if (shout){
+     	roblox.shout(groupId,argsresult.slice(6))
+         message.reply("shouted the message:" + argsresult.slice(6))
+		}else{
+
+	message.reply("You must provide something to shout!")
+  	return
+	}
+} else{
+message.reply("No permissions.")}
+}
+
+ });
+
